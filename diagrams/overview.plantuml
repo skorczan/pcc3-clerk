@@ -1,0 +1,25 @@
+@startuml
+actor User as user
+
+user - [streamlit] : uses via the web browser
+[filesystem] -- [streamlit]
+[streamlit] - [clips] : one environment per user session
+[streamlit] -- [llm]
+[streamlit] ---> [tax office]
+[clips] ..> [tax office] : provides financial data
+
+note right of [filesystem]
+  Keeps user sessions
+end note
+
+note right of [llm]
+  - Translates user input to Clips rules.
+  - Generates understandable messages from Clips rules
+end note
+
+note top of [clips]
+  - Prevents hallucinations!
+  - Ensures compliance to the law
+end note
+
+@enduml

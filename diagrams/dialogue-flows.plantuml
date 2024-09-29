@@ -1,0 +1,18 @@
+@startuml
+actor User as user
+
+user -> streamlit : enters the message
+
+streamlit -> llm : asks for translation of the user's\nmessage to Clips model
+llm --> streamlit
+
+streamlit -> clips : updates facts with the message
+streamlit -> clips : triggers interference
+streamlit -> clips : queries for known facts
+streamlit <-- clips
+
+streamlit -> llm : asks for translation of Clips facts\nto understandable message
+llm --> streamlit
+
+streamlit --> user : replies
+@enduml

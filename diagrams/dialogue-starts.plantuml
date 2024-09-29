@@ -1,0 +1,16 @@
+@startuml
+actor User as user
+
+user -> streamlit : opens the chat page
+streamlit -> fs : loads the user last session if possible
+fs --> streamlit
+
+streamlit -> clips : starts engine and populate with the last session
+streamlit -> clips : queries for known facts
+streamlit <-- clips
+
+streamlit -> llm : passes down Clips model and known facts\nfor getting a message for the user
+llm --> streamlit
+
+streamlit --> user :
+@enduml
