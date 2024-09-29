@@ -6,8 +6,8 @@ user -> streamlit : closes the chat page
 streamlit -> clips : queries for known facts
 streamlit <-- clips
 
-streamlit -> fs : stores user session for later usage
-fs --> streamlit
+streamlit -> filesystem : stores user session for later usage
+filesystem --> streamlit
 
 streamlit -> clips : stops engine
 
