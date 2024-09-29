@@ -195,7 +195,7 @@ export default class Keyboard {
 		}
 
 		// Use linear navigation if we're configured to OR if
-		// the presentation is one-dimensional
+		// the docs is one-dimensional
 		let useLinearMode = config.navigationMode === 'linear' || !this.Reveal.hasHorizontalSlides() || !this.Reveal.hasVerticalSlides();
 
 		let triggered = false;

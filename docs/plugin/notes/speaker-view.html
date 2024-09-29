@@ -428,8 +428,8 @@
 				} );
 
 				/**
-				 * Updates the presentation in the main window to match the state
-				 * of the presentation in the notes window.
+				 * Updates the docs in the main window to match the state
+				 * of the docs in the notes window.
 				 */
 				const dispatchStateToMainWindow = debounce(( state ) => {
 					window.opener.postMessage( JSON.stringify({ method: 'setState', args: [ state ]} ), '*' );
@@ -569,7 +569,7 @@
 
 				/**
 				 * We send out a heartbeat at all times to ensure we can
-				 * reconnect with the main presentation window after reloads.
+				 * reconnect with the main docs window after reloads.
 				 */
 				function setupHeartbeat() {
 

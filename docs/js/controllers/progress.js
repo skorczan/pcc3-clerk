@@ -1,5 +1,5 @@
 /**
- * Creates a visual progress bar for the presentation.
+ * Creates a visual progress bar for the docs.
  */
 export default class Progress {
 

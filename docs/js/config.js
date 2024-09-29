@@ -3,8 +3,8 @@
  */
 export default {
 
-	// The "normal" size of the presentation, aspect ratio will be preserved
-	// when the presentation is scaled to fit different resolutions
+	// The "normal" size of the docs, aspect ratio will be preserved
+	// when the docs is scaled to fit different resolutions
 	width: 960,
 	height: 700,
 
@@ -15,7 +15,7 @@ export default {
 	minScale: 0.2,
 	maxScale: 2.0,
 
-	// Display presentation control arrows
+	// Display docs control arrows
 	controls: true,
 
 	// Help the user learn the controls by providing hints, for example by
@@ -29,7 +29,7 @@ export default {
 	// or "visible"
 	controlsBackArrows: 'faded',
 
-	// Display a presentation progress bar
+	// Display a docs progress bar
 	progress: true,
 
 	// Display the page number of the current slide
@@ -93,10 +93,10 @@ export default {
 	// Enables touch navigation on devices with touch input
 	touch: true,
 
-	// Loop the presentation
+	// Loop the docs
 	loop: false,
 
-	// Change the presentation direction to be RTL
+	// Change the docs direction to be RTL
 	rtl: false,
 
 	// Changes the behavior of our navigation directions.
@@ -125,7 +125,7 @@ export default {
 	// from 1.3 -> 2.3.
 	navigationMode: 'default',
 
-	// Randomizes the order of slides each time the presentation loads
+	// Randomizes the order of slides each time the docs loads
 	shuffle: false,
 
 	// Turns fragments on and off globally
@@ -135,7 +135,7 @@ export default {
 	// so that reloading brings you to the same fragment position
 	fragmentInURL: true,
 
-	// Flags if the presentation is running in an embedded mode,
+	// Flags if the docs is running in an embedded mode,
 	// i.e. contained within a limited portion of the screen
 	embedded: false,
 
@@ -143,7 +143,7 @@ export default {
 	// key is pressed
 	help: true,
 
-	// Flags if it should be possible to pause the presentation (blackout)
+	// Flags if it should be possible to pause the docs (blackout)
 	pause: true,
 
 	// Flags if speaker notes should be visible to all viewers
@@ -257,8 +257,8 @@ export default {
 	parallaxBackgroundVertical: null,
 
 	// Can be used to initialize reveal.js in one of the following views:
-	// - print:   Render the presentation so that it can be printed to PDF
-	// - scroll:  Show the presentation as a tall scrollable page with scroll
+	// - print:   Render the docs so that it can be printed to PDF
+	// - scroll:  Show the docs as a tall scrollable page with scroll
 	//            triggered animations
 	view: null,
 
@@ -324,7 +324,7 @@ export default {
 	// Script dependencies to load
 	dependencies: [],
 
-	// Plugin objects to register and use for this presentation
+	// Plugin objects to register and use for this docs
 	plugins: []
 
 }

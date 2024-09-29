@@ -232,7 +232,7 @@ const Plugin = () => {
 							section.outerHTML = '<section data-state="alert">' +
 								'ERROR: The attempt to fetch ' + url + ' failed with HTTP status ' + xhr.status + '.' +
 								'Check your browser\'s JavaScript console for more details.' +
-								'<p>Remember that you need to serve the presentation HTML from a HTTP server.</p>' +
+								'<p>Remember that you need to serve the docs HTML from a HTTP server.</p>' +
 								'</section>';
 						}
 
@@ -294,7 +294,7 @@ const Plugin = () => {
 				xhr.send();
 			}
 			catch ( e ) {
-				console.warn( 'Failed to get the Markdown file ' + url + '. Make sure that the presentation and the file are served by a HTTP server and the file can be found there. ' + e );
+				console.warn( 'Failed to get the Markdown file ' + url + '. Make sure that the docs and the file are served by a HTTP server and the file can be found there. ' + e );
 				resolve( xhr, url );
 			}
 

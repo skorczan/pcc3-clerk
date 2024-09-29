@@ -1,8 +1,8 @@
 import { closest } from '../utils/util.js'
 
 /**
- * Manages focus when a presentation is embedded. This
- * helps us only capture keyboard from the presentation
+ * Manages focus when a docs is embedded. This
+ * helps us only capture keyboard from the docs
  * a user is currently interacting with in a page where
  * multiple presentations are embedded.
  */

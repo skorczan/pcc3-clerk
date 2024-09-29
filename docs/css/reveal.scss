@@ -36,7 +36,7 @@ html.reveal-full-page {
 	--r-controls-spacing: 12px;
 }
 
-// Force the presentation to cover the full viewport when we
+// Force the docs to cover the full viewport when we
 // enter fullscreen mode. Fixes sizing issues in Safari.
 .reveal-viewport:fullscreen {
 	top: 0 !important;
@@ -1722,7 +1722,7 @@ $notesWidthPercent: 25%;
 }
 
 // An interface element that can optionally be used to show the
-// speaker notes to all viewers, on top of the presentation
+// speaker notes to all viewers, on top of the docs
 .reveal .speaker-notes {
 	display: none;
 	position: absolute;

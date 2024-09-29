@@ -5,7 +5,7 @@ const SWIPE_THRESHOLD = 40;
 
 /**
  * Controls all touch interactions and navigations for
- * a presentation.
+ * a docs.
  */
 export default class Touch {
 

@@ -145,7 +145,7 @@ export default class Fragments {
 
 	/**
 	 * Sorts and formats all of fragments in the
-	 * presentation.
+	 * docs.
 	 */
 	sortAll() {
 

@@ -2,9 +2,9 @@ import { queryAll, enterFullscreen } from '../utils/util.js'
 import { isAndroid } from '../utils/device.js'
 
 /**
- * Manages our presentation controls. This includes both
+ * Manages our docs controls. This includes both
  * the built-in control arrows as well as event monitoring
- * of any elements within the presentation with either of the
+ * of any elements within the docs with either of the
  * following helper classes:
  * - .navigate-up
  * - .navigate-right

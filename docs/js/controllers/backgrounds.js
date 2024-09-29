@@ -57,7 +57,7 @@ export default class Backgrounds {
 
 			// Make sure the below properties are set on the element - these properties are
 			// needed for proper transitions to be set on the element via CSS. To remove
-			// annoying background slide-in effect when the presentation starts, apply
+			// annoying background slide-in effect when the docs starts, apply
 			// these properties after short time delay
 			setTimeout( () => {
 				this.Reveal.getRevealElement().classList.add( 'has-parallax-background' );
@@ -323,7 +323,7 @@ export default class Backgrounds {
 		} );
 
 		// The previous background may refer to a DOM element that has
-		// been removed after a presentation is synced & bgs are recreated
+		// been removed after a docs is synced & bgs are recreated
 		if( this.previousBackground && !this.previousBackground.closest( 'body' ) ) {
 			this.previousBackground = null;
 		}

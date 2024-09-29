@@ -2,7 +2,7 @@ import { SLIDES_SELECTOR } from '../utils/constants.js'
 import { queryAll, createStyleSheet } from '../utils/util.js'
 
 /**
- * Setups up our presentation for printing/exporting to PDF.
+ * Setups up our docs for printing/exporting to PDF.
  */
 export default class PrintView {
 
@@ -13,7 +13,7 @@ export default class PrintView {
 	}
 
 	/**
-	 * Configures the presentation for printing to a static
+	 * Configures the docs for printing to a static
 	 * PDF.
 	 */
 	async activate() {
@@ -97,7 +97,7 @@ export default class PrintView {
 				page.className = 'pdf-page';
 				page.style.height = ( ( pageHeight + config.pdfPageHeightOffset ) * numberOfPages ) + 'px';
 
-				// Copy the presentation-wide background to each individual
+				// Copy the docs-wide background to each individual
 				// page when printing
 				if( presentationBackground ) {
 					page.style.background = presentationBackground;

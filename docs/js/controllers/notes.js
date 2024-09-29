@@ -71,7 +71,7 @@ export default class Notes {
 
 	/**
 	 * Checks if there are speaker notes for ANY slide in the
-	 * presentation.
+	 * docs.
 	 */
 	hasNotes() {
 
@@ -80,7 +80,7 @@ export default class Notes {
 	}
 
 	/**
-	 * Checks if this presentation is running inside of the
+	 * Checks if this docs is running inside of the
 	 * speaker notes window.
 	 *
 	 * @return {boolean}

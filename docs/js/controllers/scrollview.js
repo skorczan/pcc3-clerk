@@ -7,7 +7,7 @@ const MIN_PROGRESS_SEGMENT_HEIGHT = 6;
 const MIN_PLAYHEAD_HEIGHT = 8;
 
 /**
- * The scroll view lets you read a reveal.js presentation
+ * The scroll view lets you read a reveal.js docs
  * as a linear scrollable page.
  */
 export default class ScrollView {
@@ -24,7 +24,7 @@ export default class ScrollView {
 	}
 
 	/**
-	 * Activates the scroll view. This rearranges the presentation DOM
+	 * Activates the scroll view. This rearranges the docs DOM
 	 * by—among other things—wrapping each slide in a page element.
 	 */
 	activate() {
@@ -35,7 +35,7 @@ export default class ScrollView {
 
 		this.active = true;
 
-		// Store the full presentation HTML so that we can restore it
+		// Store the full docs HTML so that we can restore it
 		// when/if the scroll view is deactivated
 		this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
 
@@ -78,7 +78,7 @@ export default class ScrollView {
 				pageElements.push( page );
 
 				// This transfers over the background of the vertical stack containing
-				// the slide if it exists. Otherwise, it uses the presentation-wide
+				// the slide if it exists. Otherwise, it uses the docs-wide
 				// background.
 				if( isVertical && horizontalBackgrounds.length > h ) {
 					const slideBackground = horizontalBackgrounds[h];
@@ -158,7 +158,7 @@ export default class ScrollView {
 
 	/**
 	 * Deactivates the scroll view and restores the standard slide-based
-	 * presentation.
+	 * docs.
 	 */
 	deactivate() {
 
@@ -275,7 +275,7 @@ export default class ScrollView {
 
 	/**
 	 * Updates our pages to match the latest configuration and
-	 * presentation size.
+	 * docs size.
 	 */
 	syncPages() {
 

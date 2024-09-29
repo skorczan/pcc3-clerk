@@ -76,7 +76,7 @@ export default function( revealElement, options ) {
 		// all current slides.
 		state = [],
 
-		// The current scale of the presentation (see width/height config)
+		// The current scale of the docs (see width/height config)
 		scale = 1,
 
 		// CSS transform that is currently applied to the slides container,
@@ -101,7 +101,7 @@ export default function( revealElement, options ) {
 		autoSlideStartTime = -1,
 		autoSlidePaused = false,
 
-		// Controllers for different aspects of our presentation. They're
+		// Controllers for different aspects of our docs. They're
 		// all given direct references to this Reveal instance since there
 		// may be multiple presentations running in parallel.
 		slideContent = new SlideContent( Reveal ),
@@ -124,11 +124,11 @@ export default function( revealElement, options ) {
 		notes = new Notes( Reveal );
 
 	/**
-	 * Starts up the presentation.
+	 * Starts up the docs.
 	 */
 	function initialize( initOptions ) {
 
-		if( !revealElement ) throw 'Unable to find presentation root (<div class="reveal">).';
+		if( !revealElement ) throw 'Unable to find docs root (<div class="reveal">).';
 
 		initialized = true;
 
@@ -165,7 +165,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Encase the presentation in a reveal.js viewport. The
+	 * Encase the docs in a reveal.js viewport. The
 	 * extent of the viewport differs based on configuration.
 	 */
 	function setViewport() {
@@ -213,7 +213,7 @@ export default function( revealElement, options ) {
 		// Resets all vertical slides so that only the first is visible
 		resetVerticalSlides();
 
-		// Updates the presentation to match the current configuration values
+		// Updates the docs to match the current configuration values
 		configure();
 
 		// Create slide backgrounds
@@ -225,7 +225,7 @@ export default function( revealElement, options ) {
 		// Read the initial hash
 		location.readURL();
 
-		// Notify listeners that the presentation is ready but use a 1ms
+		// Notify listeners that the docs is ready but use a 1ms
 		// timeout to ensure it's not fired synchronously after #initialize()
 		setTimeout( () => {
 			// Enable transitions now that we're loaded
@@ -285,7 +285,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Removes all slides with data-visibility="hidden". This
-	 * is done right before the rest of the presentation is
+	 * is done right before the rest of the docs is
 	 * initialized.
 	 *
 	 * If you want to show all hidden slides, initialize
@@ -314,7 +314,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Finds and stores references to DOM elements which are
-	 * required by the presentation. If a required element is
+	 * required by the docs. If a required element is
 	 * not found, it is created.
 	 */
 	function setupDOM() {
@@ -337,7 +337,7 @@ export default function( revealElement, options ) {
 		notes.render();
 
 		// Overlay graphic which is displayed during the paused mode
-		dom.pauseOverlay = Util.createSingletonNode( dom.wrapper, 'div', 'pause-overlay', config.controls ? '<button class="resume-button">Resume presentation</button>' : null );
+		dom.pauseOverlay = Util.createSingletonNode( dom.wrapper, 'div', 'pause-overlay', config.controls ? '<button class="resume-button">Resume docs</button>' : null );
 
 		dom.statusElement = createStatusElement();
 
@@ -934,7 +934,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Applies JavaScript-controlled layout rules to the
-	 * presentation.
+	 * docs.
 	 */
 	function layout() {
 
@@ -946,7 +946,7 @@ export default function( revealElement, options ) {
 			if( !config.disableLayout ) {
 
 				// On some mobile devices '100vh' is taller than the visible
-				// viewport which leads to part of the presentation being
+				// viewport which leads to part of the docs being
 				// cut off. To work around this we define our own '--vh' custom
 				// property where 100x adds up to the correct height.
 				//
@@ -1053,7 +1053,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Applies layout logic to the contents of all slides in
-	 * the presentation.
+	 * the docs.
 	 *
 	 * @param {string|number} width
 	 * @param {string|number} height
@@ -1247,7 +1247,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Returns true if we're currently on the first slide in
-	 * the presentation.
+	 * the docs.
 	 */
 	function isFirstSlide() {
 
@@ -1257,7 +1257,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Returns true if we're currently on the last slide in
-	 * the presentation. If the last slide is a stack, we only
+	 * the docs. If the last slide is a stack, we only
 	 * consider this the last slide if it's at the end of the
 	 * stack.
 	 */
@@ -1382,7 +1382,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Steps from the current point in the presentation to the
+	 * Steps from the current point in the docs to the
 	 * slide which matches the specified horizontal and vertical
 	 * indices.
 	 *
@@ -1652,7 +1652,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Syncs the presentation with the current DOM. Useful
+	 * Syncs the docs with the current DOM. Useful
 	 * when new slides or control elements are added or when
 	 * the configuration has changed.
 	 */
@@ -1860,7 +1860,7 @@ export default function( revealElement, options ) {
 						hideFragmentsIn( element );
 					}
 				}
-				// Update the visibility of fragments when a presentation loops
+				// Update the visibility of fragments when a docs loops
 				// in either direction
 				else if( i === index && config.fragments ) {
 					if( loopedForwards ) {
@@ -1969,7 +1969,7 @@ export default function( revealElement, options ) {
 				// Determine how far away this slide is from the present
 				distanceX = Math.abs( ( indexh || 0 ) - x ) || 0;
 
-				// If the presentation is looped, distance should measure
+				// If the docs is looped, distance should measure
 				// 1 between the first and last slides
 				if( config.loop ) {
 					distanceX = Math.abs( ( ( indexh || 0 ) - x ) % ( horizontalSlidesLength - viewDistance ) ) || 0;
@@ -2135,7 +2135,7 @@ export default function( revealElement, options ) {
 
 	/**
 	 * Returns a value ranging from 0-1 that represents
-	 * how far into the presentation we have navigated.
+	 * how far into the docs we have navigated.
 	 *
 	 * @return {number}
 	 */
@@ -2233,7 +2233,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Retrieves all slides in this presentation.
+	 * Retrieves all slides in this docs.
 	 */
 	function getSlides() {
 
@@ -2307,7 +2307,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Retrieves the total number of slides in this presentation.
+	 * Retrieves the total number of slides in this docs.
 	 *
 	 * @return {number}
 	 */
@@ -2358,7 +2358,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Retrieves the current state of the presentation as
+	 * Retrieves the current state of the docs as
 	 * an object. This state can then be restored at any
 	 * time.
 	 *
@@ -2379,7 +2379,7 @@ export default function( revealElement, options ) {
 	}
 
 	/**
-	 * Restores the presentation to the given state.
+	 * Restores the docs to the given state.
 	 *
 	 * @param {object} state As generated by getState()
 	 * @see {@link getState} generates the parameter `state`
@@ -2454,9 +2454,9 @@ export default function( revealElement, options ) {
 			// Cue the next auto-slide if:
 			// - There is an autoSlide value
 			// - Auto-sliding isn't paused by the user
-			// - The presentation isn't paused
+			// - The docs isn't paused
 			// - The overview isn't active
-			// - The presentation isn't over
+			// - The docs isn't over
 			if( autoSlide && !autoSlidePaused && !isPaused() && !overview.isActive() && ( !isLastSlide() || fragments.availableRoutes().next || config.loop === true ) ) {
 				autoSlideTimeout = setTimeout( () => {
 					if( typeof config.autoSlideMethod === 'function' ) {
@@ -2953,7 +2953,7 @@ export default function( revealElement, options ) {
 		removeEventListeners,
 		dispatchEvent,
 
-		// Facility for persisting and restoring the presentation state
+		// Facility for persisting and restoring the docs state
 		getState,
 		setState,
 
@@ -2995,7 +2995,7 @@ export default function( revealElement, options ) {
 		getHorizontalSlides,
 		getVerticalSlides,
 
-		// Checks if the presentation contains two or more horizontal
+		// Checks if the docs contains two or more horizontal
 		// and vertical slides
 		hasHorizontalSlides,
 		hasVerticalSlides,
@@ -3019,7 +3019,7 @@ export default function( revealElement, options ) {
 		getComputedSlideSize,
 		setCurrentScrollPage,
 
-		// Returns the current scale of the presentation content
+		// Returns the current scale of the docs content
 		getScale: () => scale,
 
 		// Returns the current configuration object

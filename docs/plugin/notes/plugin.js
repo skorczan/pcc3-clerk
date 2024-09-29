@@ -8,9 +8,9 @@ import { marked } from 'marked';
  *
  * Handshake process:
  * 1. This window posts 'connect' to notes window
- *    - Includes URL of presentation to show
+ *    - Includes URL of docs to show
  * 2. Notes window responds with 'connected' when it is available
- * 3. This window proceeds to send the current presentation state
+ * 3. This window proceeds to send the current docs state
  *    to the notes window
  */
 const Plugin = () => {
@@ -62,7 +62,7 @@ const Plugin = () => {
 	/**
 		* Connect to the notes window through a postmessage handshake.
 		* Using postmessage enables us to work in situations where the
-		* origins differ, such as a presentation being opened from the
+		* origins differ, such as a docs being opened from the
 		* file system.
 		*/
 	function connect() {
@@ -231,7 +231,7 @@ const Plugin = () => {
 				else {
 					// Keep listening for speaker view hearbeats. If we receive a
 					// heartbeat from an orphaned window, reconnect it. This ensures
-					// that we remain connected to the notes even if the presentation
+					// that we remain connected to the notes even if the docs
 					// is reloaded.
 					window.addEventListener( 'message', event => {
 
