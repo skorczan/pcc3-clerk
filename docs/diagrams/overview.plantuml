@@ -13,8 +13,8 @@ note right of [filesystem]
 end note
 
 note right of [llm]
-  - Translates user input to Clips rules.
-  - Generates understandable messages from Clips rules
+  - Translates user input to Clips facts
+  - Generates understandable messages from Clips facts
 end note
 
 note top of [clips]
